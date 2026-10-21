@@ -65,7 +65,7 @@ const [filterSeverity, setFilterSeverity] = useState("All");
 const [aiReason, setAiReason] = useState("");
 const [suggestedFix, setSuggestedFix] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/bugs")
+    fetch("https://ai-bug-triage-system.onrender.com/bugs")
         .then((response) => response.json())
         .then((data) => {
             setBugs(data);
@@ -101,7 +101,7 @@ if (duplicate) {
     setMessage("");
 
     try {
-        const response = await fetch("http://localhost:5000/bugs", {
+        const response = await fetch("https://ai-bug-triage-system.onrender.com/bugs", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -147,7 +147,7 @@ async function handleAnalyzeBug() {
   try {
     setMessage("Analyzing bug with Gemini...");
 
-    const response = await fetch("http://localhost:5000/bugs/analyze", {
+    const response = await fetch("https://ai-bug-triage-system.onrender.com/bugs/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -215,7 +215,7 @@ const handleDelete = async (id) => {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/bugs/${id}`, {
+        const response = await fetch(`https://ai-bug-triage-system.onrender.com/bugs/${id}`, {
             method: "DELETE"
         });
 
@@ -251,7 +251,7 @@ const handleEdit = async (bug) => {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000/bugs/${bug._id}`, {
+        const response = await fetch(`https://ai-bug-triage-system.onrender.com/bugs/${bug._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
