@@ -2,6 +2,9 @@
 
 An AI-powered bug management application that helps developers analyze software bug reports, classify issues, and prioritize fixes using the Gemini API.
 
+## Live Demo
+**Try the application:** https://ai-bug-triage-system.vercel.app
+
 ## Features
 
 - **AI Bug Analysis:** Analyze bug titles and descriptions using Google Gemini.
